@@ -1,4 +1,4 @@
-#LearningJS
+LearningJS
 ===
 第一週：
 1. 下拉式清單
