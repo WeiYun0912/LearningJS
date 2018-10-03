@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="import.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var box = $('box');
+			var nodes  = box.childNodes;
+			// alert(nodes.length);
+			for(var i =0;i<nodes.length;i++){
+				if(nodes[i].nodeType == 1){ //元素節點
+					// alert(nodes[i].nodeName);  #text
+					if(nodes[i].nodeName.toLocaleLowerCase() == 'span'){
+						// alert(nodes[i].nodeValue);
+						// alert(nodes[i].innerHTML);
+					}
+				}else if(nodes[i].nodeType == 2){ //屬性節點
+					// alert(nodes[i].nodeName); A #text
+				} else if(nodes[i].nodeType == 3){ //文本節點
+					// alert(nodes[i].nodeName); SPAN #text
+				}
+			}
+
+			var oTest = $('test');
+			// oTest.innerHTML = '<h1>innerHTML吃標籤</h1>'; 
+			// oTest.childNodes[0].nodeValue = '<h1>nodeValue 不吃標籤</h1>'
+
+
+			var oView = $('view');
+
+			// alert(oView.firstChild.nodeName); //獲取首節點 P
+			// alert(oView.lastChild.nodeName);  //獲取末節點 SPAN
+			// alert(oView.parentNode.nodeName); //獲取父節點 BODY
+			// alert(oView.lastChild.previousSibling.nodeName); //獲取末節點的前一個 A
+			// alert(oView.firstChild.nextSibling.nodeName); //獲取首節點的下一個 A
+
+
+
+
+
+		});
+	</script>
+	<title></title>
+</head>
+<body>
+	<div id="box">
+		<a href="#">Hi</a>
+		<span>hey!</span>
+	</div>
+
+	<div id="test">
+		
+	</div>
+	
+	<div id="view"><p>今天是禮拜三</p><a href="#">Google</a><span>10月x號</span></div>
+
+</body>
+</html>
