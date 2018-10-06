@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			/**
+				比較耗效能
+			**/
+			// for(var i=0;i<100;i++){
+			// 	var oImg = document.createElement('img');
+			// 	oImg.src = 'Money.jpg';
+			// 	document.body.appendChild(oImg);
+			// }
+
+
+			/**
+				比較不耗性能
+			**/
+			var oImg = document.createElement('img');
+			oImg.src = 'Money.jpg';
+
+			var cloneImg = null;
+			for(var i=0;i<1000;i++){
+				cloneImg = oImg.cloneNode();
+				document.body.appendChild(cloneImg);
+			}
+
+
+		}
+			
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
