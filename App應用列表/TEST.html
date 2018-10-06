@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		
+	</title>
+	<style type="text/css">
+	#box{
+		width: 350px;
+		height: 568px;
+		border: 1px solid gray;
+		overflow: auto; 
+	}
+
+	.section{
+		width: 330px;
+		margin: 5px;
+		border-bottom :1px solid gray;
+
+	}
+
+	.section a{
+		text-decoration: none;
+	}
+
+
+
+
+</style>
+
+<script type="text/javascript">
+	window.onload = function(){
+		var oBox = document.getElementById('box');
+		var oSection = null; // 
+		var oName = null; // 連結名稱
+		var oHead = null; // 創建img用
+		var oContent = null; //內容
+		var oText = null; // 標頭
+
+		//廣告
+		var oAd = null;
+
+		for(var i=0;i<10;i++){
+
+			//在第三則內容插入廣告
+			if(i==3){
+				oAd = document.createElement('div');
+				oAd.className = 'section';
+				oBox.appendChild(oAd);
+
+				oName = document.createElement('a');
+				oName.href = '#';
+				oAd.appendChild(oName);
+
+				oText = document.createTextNode('我是廣告標題');
+				oName.appendChild(oText);
+
+				oContent = document.createElement('p');
+				oContent.innerHTML = '我是廣告內容';
+
+				oAd.appendChild(oContent);
+				// oSection.appendChild(oContent);
+			}
+
+			oSection = document.createElement('div');
+			oSection.className = 'section';
+			oBox.appendChild(oSection); //添加子元素
+
+			oName = document.createElement('a');
+			oName.href = '#';
+			oSection.appendChild(oName); //添加子元素
+
+			oHead = document.createElement('img');
+			oHead.src = 'img/icon_0'+i+'.png';
+			oName.appendChild(oHead); //添加子元素
+
+			oText = document.createTextNode((i+1)+',App應用');
+			oName.appendChild(oText); //添加子元素
+
+			oContent = document.createElement('p');
+			oContent.innerHTML = '練習練習練習練習練習練習練習練習練習練習';
+
+			oSection.appendChild(oContent); //添加子元素
+		}
+
+		//5秒後刪除廣告
+		setTimeout(function(){
+			oBox.removeChild(oAd);
+		},5000)
+
+	}
+</script>
+</head>
+<body>
+	<div id="box">
+		<!-- <div class="section">
+			<a href="#">
+				<img src="img/icon_00.png">
+				跑酷
+			</a>
+			<p>
+				練習練習練習練習練習練習練習練習練習練習
+				練習練習練習練習練習練習練習練習練習練習
+			</p>
+		</div> -->
+
+	</div>
+</body>
+</html>
