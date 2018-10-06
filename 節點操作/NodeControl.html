@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		window.onload = function(){
+
+			var oText = document.createElement('h1');
+			oText.innerHTML = '練習';
+			document.body.appendChild(oText);
+
+
+			var oAlink = document.createElement('a'); //創建新元素
+			oAlink.href = '#'; //指定href
+			oAlink.innerHTML= "嗨 <br><br>"; //插入文字
+			document.body.appendChild(oAlink); //把子元素 顯示在body上
+
+
+
+			var oInput = document.createElement('input');
+			oInput.type= 'text';
+			oInput.disabled = 'true';
+			oInput.style = 'background:gray';
+			document.body.appendChild(oInput);
+
+			//加上這段oText和oAlink就為父子關係 不加的話為同級別
+
+			oText.appendChild(oAlink);
+
+			//創建文件節點(只顯示文字 不吃元素)
+
+			var oTextChild = document.createTextNode('<h1>練習</h1>');
+			oText.appendChild(oTextChild);
+
+			// insertBefore 將新節點插入到前面
+			var oLi = document.createElement('li');
+			oLi.innerHTML = '測試';
+
+			oView = document.getElementById('view');
+
+			// 在oView前面添加oLi
+			// oView.parentNode.insertBefore(oLi,oView);
+
+			//插入到 li 的 第一個位置
+			// oView.insertBefore(oLi,oView.firstChild);
+			////插入到 li 的 最後一個位置  
+			// oView.insertBefore(oLi,oView.lastChild); = oView.appendChild(oLi);
+			// oView.appendChild(oLi);
+
+
+		}
+	</script>
+	<title></title>
+</head>
+<body>
+	<ul id="view">
+		<li>1.練習</li>
+		<li>2.練習</li>
+		<li>3.練習</li>
+		<li>4.練習</li>
+		
+	</ul>
+</body>
+</html>
