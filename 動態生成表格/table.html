@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		table{
+			width: 500px;
+			height: 400px;
+			border: 1px solid gray;
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		table td{
+			border:1px solid gray;
+		}
+	</style>
+	
+	<script type="text/javascript" src="import.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var oRow = $('row');
+			var oCol = $('col');
+			var oBtn = $('btn');
+
+			oBtn.onclick = function(){
+				var _row = oRow.value;
+				var _col = oCol.value;
+
+
+				var _table = document.createElement('table');
+				document.body.appendChild(_table);
+
+				for(var i=0;i<_row;i++){
+					var _tr = document.createElement('tr');
+					_table.appendChild(_tr);
+
+					//隔一行變色
+					if((i+1)%2 == 0){
+						_tr.style.background = 'black';
+						_tr.style.color = 'white';
+					}
+
+					//格子
+					for(var j=0;j<_col;j++){
+						var _td = document.createElement('td');
+						_td.innerHTML = (i+1) + '-' + (j+1);
+						_tr.appendChild(_td);
+					}
+
+					//增加刪除列
+					var _delTd = document.createElement('td');
+					_tr.appendChild(_delTd);
+					var _delBtn = document.createElement('input');
+					_delBtn.type = 'button';
+					_delBtn.value = '刪除';
+					_delTd.appendChild(_delBtn);
+
+					_delBtn.onclick = function(){
+						_table.removeChild(this.parentNode.parentNode); //父節點的父節點 1.delTd  2.tr 刪除tr
+					}
+
+
+				}
+			}
+
+		})
+	</script>
+</head>
+<body>
+
+	行: <input type="text" id="row" placeholder="行"> <br>
+	列: <input type="text" id="col" placeholder="列"> <br>
+
+	<input type="button" id="btn" value="創建">
+
+	<!-- <table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		
+	</table> -->
+
+
+</body>
+</html>
