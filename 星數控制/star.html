@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		ul{
+			list-style: none;
+			width: 135px;
+			height:27px;
+			/*background: red;*/
+			margin:30px;
+		}
+
+		li{
+			float:left;
+			width: 27px;
+			height: 27px;
+			background: url(img/star.gif);
+		}
+
+		.active{
+
+			background-position-y:-29px;
+		}
+
+	</style>
+	<script type="text/javascript" src="import.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var aLi = document.getElementsByTagName('li');
+			var oInfo = document.getElementsByTagName('p')[0];
+			//保存評分下標
+			//評分直:0~4
+			//只是初始化狀態,默認不是為0
+			var current = -1;
+
+			for(var i=0;i<aLi.length;i++){
+				// 自定義屬性 --下標
+				aLi[i].index = i;
+
+				//鼠標移入
+				aLi[i].onmouseover = function(){
+					//根據鼠標位置,點亮對應的星星
+					//這種方法只往前不往後
+					// for(var j=0;j<=this.index;j++){
+					// 	aLi[j].className = 'active';
+					// }
+
+					// 回退
+					for(var j=0;j<aLi.length;j++){
+						if(j <= this.index){
+							aLi[j].className = 'active';
+						}else{ //取消
+							aLi[j].className = '';
+						}
+					}
+				}
+
+				//鼠標移出
+				aLi[i].onmouseout = function(){
+					//沒評分:所有的都取消
+					//有評分時點亮
+					for(var j=0;j<aLi.length;j++){
+						if(j <= current){
+							aLi[j].className = 'active';
+						}else{
+							aLi[j].className = '';
+						}
+					}
+				}
+
+				//鼠標點擊
+				aLi[i].onclick = function(){
+					current = this.index;
+					// alert(current);
+					oInfo.innerHTML = '評分: ' +(current+1);
+				}
+			}
+		})
+	</script>
+</head>
+<body>
+
+	<div id="view">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<p></p>
+	</div>
+
+</body>
+</html>
