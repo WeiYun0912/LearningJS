@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<style type="text/css">
+		body{
+			height: 1000px;
+		}
+	</style>
+	
+
+	<script type="text/javascript">
+		var i  = 0;
+		window.onresize = function(){
+			document.title = i++;
+			// console.log(i);
+		}
+
+		window.onscroll = function(){
+			document.title = i++;
+		}
+
+		document.onclick = function(){
+
+			console.log(document.documentElement.clientWidth);
+			console.log(document.documentElement.clientHeight);
+
+		}
+		
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>
