@@ -12,7 +12,7 @@
 ## 程式碼區塊
 
 初始化變數
-```javascript=
+```js
 var oBox = document.getElementById('box');
 var oSection = null; // 
 var oName = null; // 連結名稱
@@ -22,7 +22,7 @@ var oText = null; // 標頭
 ```
 
 利用節點操作創建App程式列表
-```javascript=
+```js
 for(var i=0;i<5;i++){
         oSection = document.createElement('div');
 	oSection.className = 'section';
