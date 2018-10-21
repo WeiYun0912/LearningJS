@@ -72,8 +72,9 @@ for(var i =0;i<nodes.length;i++){
 	<span id="ImSpan">hey!</span>
 </div>
 ```
-<br>
-操作屬性節點 
+
+操作屬性節點
+
 ```js
 var i = document.getElementById('ImSpan').attributes[0];
 // i.nodeType = 2
