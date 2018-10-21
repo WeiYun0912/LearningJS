@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<script type="text/javascript">
+	window.onload = function (){
+		var oPassword = document.getElementById('password');
+
+		oPassword.onfocus = function(){
+			this.value = "";
+		}
+
+		oPassword.onblur = function(){
+			this.value = "請輸入密碼";
+		}
+	}
+</script>
+<body>
+	<input type="text" id="password" value="請輸入密碼" >
+</body>
+</html>
