@@ -20,3 +20,28 @@ var oHead = null; // 創建img用
 var oContent = null; //內容
 var oText = null; // 標頭
 ```
+
+利用節點操作創建App程式列表
+```javascript=
+for(var i=0;i<5;i++){
+      oSection = document.createElement('div');
+			oSection.className = 'section';
+			oBox.appendChild(oSection); //添加子元素
+
+			oName = document.createElement('a');
+			oName.href = '#';
+			oSection.appendChild(oName); //添加子元素
+
+			oHead = document.createElement('img');
+			oHead.src = 'img/icon_0'+i+'.png';
+			oName.appendChild(oHead); //添加子元素
+
+			oText = document.createTextNode((i+1)+',App應用');
+			oName.appendChild(oText); //添加子元素
+
+			oContent = document.createElement('p');
+			oContent.innerHTML = '練習練習練習練習練習練習練習練習練習練習';
+
+			oSection.appendChild(oContent); //添加子元素
+}
+```
