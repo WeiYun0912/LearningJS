@@ -90,3 +90,36 @@ for(var i=0;i<5;i++){
 ```
 
 可以發現我們是在i=3(第三則內容)插入廣告，<br>所以當我們想要把廣告插入在其他則內容時，只要更動i就能把廣告插入在其他則內容中。
+
+附上HTML與CSS
+```html
+<body>
+	<div id="box">
+	</div>
+</body>
+```
+
+```css
+#box{
+	width: 350px;
+	height: 568px;
+	border: 1px solid gray;
+	overflow: auto; 
+}
+
+.section{
+	width: 330px;
+	margin: 5px;
+	border-bottom :1px solid gray;
+}
+
+.section a{
+	text-decoration: none;
+}
+
+img{
+	width: 65px;
+	height: 65px;
+}
+```
+
