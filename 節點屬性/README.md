@@ -3,9 +3,19 @@
 ## 介紹
 解析JAVASCRIPT的節點操作
 
-nodeType = 1 時 屬於 元素節點 <br>
-nodeType = 2 時 屬於 屬性節點 (span,p,a...) <br>
-nodeType = 3 時 屬於 文本節點 <br>
+nodeType = 1 時 屬於 元素節點 (html,body..)<br>
+nodeType = 2 時 屬於 屬性節點 (span,p,a...)<br>
+nodeType = 3 時 屬於 文本節點 (空格元素)<br>
+
+文本節點(空格元素)
+```html
+<div>#################
+########<span>hi</span>
+</div>
+```
+```diff
+- ### 的地方就代表空格元素
+```
 
 
 ## 程式碼區塊
@@ -34,9 +44,9 @@ for(var i =0;i<nodes.length;i++){
 		// alert(nodes[i].nodeValue);
 	} else if(nodes[i].nodeType == 3){ //文本節點
 		//文本節點的nodeValue是(文字內容)
-		// alert(nodes[i].innerHTML);
-		// alert(nodes[i].nodeName);// #text
-		// alert(nodes[i].nodeValue);
+		alert(nodes[i].innerHTML); 
+		alert(nodes[i].nodeName);
+		alert(nodes[i].nodeValue);
 	}
 }
 ```
