@@ -3,17 +3,10 @@
 ## 介紹
 解析JAVASCRIPT的節點操作
 
+### nodeType
 nodeType = 1 時 屬於 元素節點 (html,body..)<br>
 nodeType = 2 時 屬於 屬性節點 (span,p,a...)<br>
 nodeType = 3 時 屬於 文本節點 (空格元素)<br>
-
-nodeName 代表 屬性的名稱 例如:
-```html
-<span id="ImSpan"></span>
-```
-這裡的nodeName就是 id
-
-
 文本節點(空格元素)
 ```html
 <div>#################
@@ -23,6 +16,17 @@ nodeName 代表 屬性的名稱 例如:
 ```diff
 - ### 的地方就代表空格元素
 ```
+
+
+### nodeName
+nodeName 代表 屬性的名稱 例如:
+```html
+<span id="ImSpan"></span>
+```
+這裡的nodeName就是 id
+
+
+
 
 
 ## 程式碼區塊
