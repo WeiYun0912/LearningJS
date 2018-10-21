@@ -7,6 +7,13 @@ nodeType = 1 時 屬於 元素節點 (html,body..)<br>
 nodeType = 2 時 屬於 屬性節點 (span,p,a...)<br>
 nodeType = 3 時 屬於 文本節點 (空格元素)<br>
 
+nodeName 代表 屬性的名稱 例如:
+```html
+<span id="ImSpan"></span>
+```
+這裡的nodeName就是 id
+
+
 文本節點(空格元素)
 ```html
 <div>#################
@@ -50,5 +57,18 @@ for(var i =0;i<nodes.length;i++){
 	}
 }
 ```
+
+操作屬性節點 
+```js
+var i = document.getElementById('ImSpan').attributes[0];
+// nodeType = 2
+// nodeName = id
+// nodeValue = ImSpan
+// alert(i.nodeValue);
+```
+```html
+<span id="ImSpan">hey!</span>
+```
+
 
 待更...
