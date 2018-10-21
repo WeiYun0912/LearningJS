@@ -26,8 +26,11 @@ nodeName 代表 屬性的名稱 例如:
 ```
 這裡的nodeName就是 id
 
+___
 
-
+### nodeValue
+待更...
+___
 
 
 ## 程式碼區塊
@@ -66,10 +69,9 @@ for(var i =0;i<nodes.length;i++){
 操作屬性節點 
 ```js
 var i = document.getElementById('ImSpan').attributes[0];
-// nodeType = 2
-// nodeName = id
-// nodeValue = ImSpan
-// alert(i.nodeValue);
+// i.nodeType = 2
+// i.nodeName = id
+// i.nodeValue = ImSpan
 ```
 ```html
 <span id="ImSpan">hey!</span>
