@@ -7,6 +7,7 @@
 nodeType = 1 時 屬於 元素節點 (html,body..)<br>
 nodeType = 2 時 屬於 屬性節點 (span,p,a...)<br>
 nodeType = 3 時 屬於 文本節點 (空格元素)<br>
+___
 文本節點(空格元素)
 ```html
 <div>#################
